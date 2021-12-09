@@ -16,7 +16,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
     fetchData();
   }, [fetchUrl]);
 
-  console.table(movies);
+  // console.table(movies);
 
   return (
     <div className="row">
@@ -26,7 +26,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
           return (
             <img
               key={movie.id}
-              className="row__poster"
+              className={`row__poster ${isLargeRow && "row__posterLarge"}`}
               src={`${base_url}${
                 isLargeRow ? movie.poster_path : movie.backdrop_path
               }`}
